@@ -1,4 +1,3 @@
-
 #  SecureWipe: Cross-Platform Secure Data Wiping Solution
 
 [![C++](https://img.shields.io/badge/C%2B%2B-20-blue.svg)](https://isocpp.org/)
@@ -121,36 +120,27 @@ Follow the interface to securely wipe supported devices.
 
 ---
 
-# Docker Container Support
-
-A Docker container has been created to run SecureWipe in an isolated environment.
+###  For Docker Users
 
 > **⚠️ WARNING:** The Docker container implementation is currently under development. While USB devices are detected, it is identified as local disks inside the container and the wiping functionality on it is not yet operational. This Docker setup is intended for testing and development purposes only. For production use and to actually wipe USB devices, please run SecureWipe directly on your host system outside of Docker.
 
-## Prerequisites
+#### Option 1 — Pull from Docker Hub
 
-* Docker installed on your system.
-* USB device connected (will be detected but not wiped).
-
-## Building the Docker Image
-
-You can either build the image locally or pull it directly from Docker Hub.
-
-### Method 1: Pull from Docker Hub
-
-The easiest way to get started is to pull the pre-built image:
+1. Pull the pre-built image:
 
 ```bash
 docker pull haschwalth00b/securewipe:latest
 ```
 
-Then run the container:
+2. Run the container:
 
 ```bash
 docker run --rm -it --privileged -v /dev:/dev -v /run/udev:/run/udev securewipe
 ```
 
-### Method 2: Build Locally
+---
+
+#### Option 2 — Build Locally
 
 1. Clone this repository:
 
